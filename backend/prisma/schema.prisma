@@ -1,0 +1,256 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "library"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  tourist
+  provider
+  admin
+}
+
+model User {
+  id           String   @id @default(uuid()) @db.Uuid
+  email        String   @unique @db.VarChar(255)
+  passwordHash String?  @map("password_hash") @db.VarChar(255)
+  fullName     String   @map("full_name") @db.VarChar(150)
+  role         UserRole @default(tourist)
+  avatarUrl    String?  @map("avatar_url")
+  phone        String?  @db.VarChar(20)
+  bio          String?
+  location     String?  @db.VarChar(255)
+  googleId     String?  @unique @map("google_id") @db.VarChar(255)
+  isVerified   Boolean  @default(false) @map("is_verified")
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  experiences        Experience[]
+  reviews            Review[]
+  bookings           Booking[]
+  impactCertificates ImpactCertificate[]
+
+  @@index([email], map: "idx_users_email")
+  @@index([role], map: "idx_users_role")
+  @@map("users")
+}
+
+model Experience {
+  id         String @id @default(uuid()) @db.Uuid
+  providerId String @map("provider_id") @db.Uuid
+
+  title            String
+  description      String
+  shortDescription String @map("short_description")
+
+  category       ExperienceCategory
+  pricePerPerson Int                @map("price_per_person")
+  currency       String             @default("NPR")
+  durationHours  Int                @map("duration_hours")
+  maxGuests      Int                @map("max_guests")
+
+  locationName String @map("location_name")
+  latitude     Float
+  longitude    Float
+  district     String
+  province     String
+
+  thumbnail      String?
+  images         String[]
+  panoramaImages String[] @map("panorama_images")
+  streetViewUrl  String?  @map("street_view_url")
+
+  amenities String[]
+  languages String[]
+
+  isVerified           Boolean @default(false) @map("is_verified")
+  avgRating            Float   @default(0) @map("avg_rating")
+  totalReviews         Int     @default(0) @map("total_reviews")
+  totalBookings        Int     @default(0) @map("total_bookings")
+  communityImpactScore Float   @default(0) @map("community_impact_score")
+
+  approvalStatus ApprovalStatus @default(PENDING) @map("approval_status")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  provider           User                @relation(fields: [providerId], references: [id])
+  reviews            Review[]
+  bookings           Booking[]
+  impactCertificates ImpactCertificate[]
+
+  @@unique([providerId, title], map: "experiences_provider_id_title_key")
+  @@index([providerId])
+  @@index([category])
+  @@index([district])
+  @@index([province])
+  @@index([pricePerPerson])
+  @@index([durationHours])
+  @@index([approvalStatus])
+  @@map("experiences")
+}
+
+enum ExperienceCategory {
+  HOMESTAY
+  WORKSHOP
+  GUIDE
+  HERITAGE_SITE
+  FOOD_TOUR
+  TREKKING
+  ADVENTURE
+  WELLNESS
+}
+
+enum ApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Trail {
+  id String @id @default(uuid())
+
+  creatorId String? @map("creator_id")
+
+  title       String
+  description String?
+
+  coverImage String? @map("cover_image")
+
+  difficulty        Difficulty
+  durationDays      Int        @map("duration_days")
+  totalCostEstimate Int?       @map("total_cost_estimate")
+  currency          String     @default("NPR")
+
+  interests   String[]
+  travelStyle String   @map("travel_style")
+
+  isFeatured Boolean @default(false) @map("is_featured")
+
+  totalBookings Int   @default(0) @map("total_bookings")
+  avgRating     Float @default(0) @map("avg_rating")
+
+  days Json
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([isFeatured])
+  @@index([travelStyle])
+  @@index([difficulty])
+}
+
+enum Difficulty {
+  EASY
+  MODERATE
+  HARD
+}
+
+model Review {
+  id String @id @default(uuid()) @db.Uuid
+
+  userId       String @map("user_id") @db.Uuid
+  experienceId String @map("experience_id") @db.Uuid
+
+  rating  Int
+  comment String
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  // relations
+  user       User       @relation(fields: [userId], references: [id])
+  experience Experience @relation(fields: [experienceId], references: [id])
+
+  @@unique([userId, experienceId])
+  @@index([experienceId])
+}
+
+model CommunityImpact {
+  id String @id @default(uuid())
+
+  //  Overall impact stats
+  familiesSupported        Int   @map("families_supported") // total families earning via platform
+  totalRevenueGenerated    Int   @map("total_revenue_generated") // total NPR generated from bookings
+  communitySharePercentage Float @map("community_share_percentage") // % of revenue going to locals
+
+  culturalProgramsFunded  Int @map("cultural_programs_funded") // number of cultural programs supported
+  artisansEmployed        Int @map("artisans_employed") // number of artisans earning via platform
+  heritageSitesMaintained Int @map("heritage_sites_maintained") // heritage sites supported/maintained
+
+  districtsReached Int @map("districts_reached") // how many districts are impacted
+  travelersServed  Int @map("travelers_served") // total tourists served
+
+  //  Breakdown (stored as JSON for MVP)
+  distribution Json // how money is split across categories
+  regional     Json // impact by district
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+}
+
+model Booking {
+  id String @id @default(uuid()) @db.Uuid
+
+  userId       String @map("user_id") @db.Uuid
+  experienceId String @map("experience_id") @db.Uuid
+
+  bookingDate DateTime @map("booking_date")
+  numGuests   Int      @map("num_guests")
+
+  totalAmount Int    @map("total_amount")
+  currency    String @default("NPR")
+
+  baseAmount          Int @default(0) @map("base_amount")
+  taxAmount           Int @default(0) @map("tax_amount")
+  localEarningsAmount Int @default(0) @map("local_earnings_amount")
+  communityFundAmount Int @default(0) @map("community_fund_amount")
+  platformFeeAmount   Int @default(0) @map("platform_fee_amount")
+  operationsAmount    Int @default(0) @map("operations_amount")
+
+  status BookingStatus @default(PENDING)
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user              User               @relation(fields: [userId], references: [id])
+  experience        Experience         @relation(fields: [experienceId], references: [id])
+  impactCertificate ImpactCertificate?
+
+  @@index([userId])
+  @@index([experienceId])
+  @@index([status])
+}
+
+model ImpactCertificate {
+  id           String @id @default(uuid()) @db.Uuid
+  userId       String @map("user_id") @db.Uuid
+  bookingId    String @unique @map("booking_id") @db.Uuid
+  experienceId String @map("experience_id") @db.Uuid
+
+  title           String
+  medalType       String @map("medal_type")
+  certificateCode String @unique @map("certificate_code")
+  impactSummary   Json   @map("impact_summary")
+
+  issuedAt DateTime @default(now()) @map("issued_at") @db.Timestamptz(6)
+
+  user       User       @relation(fields: [userId], references: [id])
+  booking    Booking    @relation(fields: [bookingId], references: [id])
+  experience Experience @relation(fields: [experienceId], references: [id])
+
+  @@index([userId])
+  @@index([experienceId])
+  @@map("impact_certificates")
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}

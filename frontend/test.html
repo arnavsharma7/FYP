@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Nepal Uncharted | Discover the Uncharted Heart of Nepal</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9ff;
+      color: #121c2c;
+    }
+  </style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#d9e3f9",
+            "on-surface-variant": "#57423a",
+            "outline-variant": "#dec0b5",
+            "inverse-surface": "#273141",
+            "inverse-primary": "#ffb596",
+            "secondary": "#376850",
+            "on-background": "#121c2c",
+            "tertiary-container": "#9b6d00",
+            "surface-dim": "#d0daf0",
+            "on-primary": "#ffffff",
+            "surface-variant": "#d9e3f9",
+            "tertiary": "#7b5600",
+            "primary": "#9f3e07",
+            "surface-container-high": "#dee8ff",
+            "background": "#f9f9ff",
+            "on-secondary-fixed": "#002113",
+            "surface-container-low": "#f0f3ff",
+            "primary-fixed": "#ffdbcd",
+            "outline": "#8a7268",
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#271900",
+            "primary-fixed-dim": "#ffb596",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#3d6e55",
+            "surface-bright": "#f9f9ff",
+            "tertiary-fixed": "#ffdeaa",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#ebf1ff",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#a14009",
+            "primary-container": "#c05621",
+            "on-primary-fixed": "#360f00",
+            "on-primary-fixed-variant": "#7d2d00",
+            "secondary-fixed-dim": "#9ed2b4",
+            "on-secondary-fixed-variant": "#1d5039",
+            "surface": "#f9f9ff",
+            "tertiary-fixed-dim": "#f8bc4b",
+            "surface-container": "#e7eeff",
+            "on-tertiary-container": "#fffeff",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#b9efcf",
+            "secondary-container": "#b9efcf",
+            "on-surface": "#121c2c",
+            "on-primary-container": "#fffeff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "md": "16px",
+            "unit": "4px",
+            "margin": "32px",
+            "lg": "24px",
+            "xl": "40px",
+            "gutter": "24px",
+            "xs": "4px",
+            "max_width": "1280px",
+            "sm": "8px"
+          },
+          "fontFamily": {
+            "h2": ["Noto Serif"],
+            "label-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "h1": ["Noto Serif"],
+            "body-lg": ["Inter"],
+            "h3": ["Noto Serif"]
+          },
+          "fontSize": {
+            "h2": ["36px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "label-sm": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+            "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+            "h3": ["28px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-surface text-on-surface">
+  <!-- TopAppBar Navigation Shell -->
+  <header
+    class="fixed top-0 w-full flex justify-between items-center px-8 py-4 z-50 bg-white/90 dark:bg-stone-950/90 backdrop-blur-md border-b border-stone-200 dark:border-stone-800 transition-all duration-300 ease-in-out">
+    <div class="text-2xl font-serif font-bold text-orange-800 dark:text-orange-600">Nepal Uncharted</div>
+    <nav class="hidden md:flex gap-8 items-center">
+      <a class="font-serif text-sm uppercase tracking-widest text-orange-700 dark:text-orange-500 border-b-2 border-orange-700 pb-1"
+        href="#">Discovery</a>
+      <a class="font-serif text-sm uppercase tracking-widest text-stone-600 dark:text-stone-400 hover:text-orange-700 transition-colors"
+        href="#">Trail Builder</a>
+      <a class="font-serif text-sm uppercase tracking-widest text-stone-600 dark:text-stone-400 hover:text-orange-700 transition-colors"
+        href="#">Impact</a>
+      <a class="font-serif text-sm uppercase tracking-widest text-stone-600 dark:text-stone-400 hover:text-orange-700 transition-colors"
+        href="#">Marketplace</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <span class="material-symbols-outlined text-on-surface-variant cursor-pointer">search</span>
+      <button
+        class="bg-primary-container text-on-primary-container font-serif text-sm uppercase tracking-widest px-6 py-2 transition-all hover:brightness-110">Sign
+        In</button>
+    </div>
+  </header>
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative h-[921px] flex items-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover grayscale-[0.2] brightness-90"
+          data-alt="A cinematic, wide-angle shot of the majestic Himalayas at dawn, with the sun casting a golden terracotta glow over snow-capped peaks and ancient stone monasteries in the foreground. The landscape is crisp and clear, embodying a premium heritage aesthetic with deep forest green valleys and pristine white summits. The lighting is soft yet dramatic, creating a sense of serene discovery and professional photographic quality."
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3lpjK7hMBTpsw-hBQ9mtnqm5OV9PBE4LyBtmsynus0rBPnGjoOgrPsgMZyajc629AOjmE-u58iZUpxrxXWh8S1ZH6Z1FrVqxx0we1UGsVruok9s9uhm0ahXvXrRZx9wE17qsMoXylzpsTwFAvLfmy7B_2SlQWjCYwPQSVe0N04gvZDQcZQv_XYBg9d0TS3bzbw_OrchUuK3I7CLXAahzWBPkDJRJrniyf2-qhm7Q0b02eERKSDzcAxhXgFW2LDiQLMtjJLK8T" />
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+        <div class="max-w-2xl bg-white/10 backdrop-blur-sm p-xl border-l-4 border-primary-container">
+          <h1 class="font-h1 text-h1 text-white mb-lg">Discover the Uncharted Heart of Nepal</h1>
+          <p class="font-body-lg text-body-lg text-white mb-xl leading-relaxed">Beyond the maps and crowded peaks lies a
+            Nepal of hidden valleys, ancient traditions, and sustainable exploration. We guide you to the soul of the
+            Himalayas.</p>
+          <button
+            class="bg-primary-container text-on-primary-container px-xl py-md font-serif text-sm uppercase tracking-widest hover:brightness-110 transition-all flex items-center gap-2">
+            Start Your Journey
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Heritage Trails (Bento Grid) -->
+    <section class="py-24 px-8 max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div>
+          <span
+            class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-3 py-1 mb-4 inline-block">AUTHENTIC
+            EXPERIENCES</span>
+          <h2 class="font-h2 text-h2 text-on-surface">Featured Heritage Trails</h2>
+        </div>
+        <p class="max-w-md font-body-md text-body-md text-on-surface-variant">Carefully curated routes that preserve
+          local identity while providing world-class trekking experiences.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+        <!-- Large Card -->
+        <div
+          class="md:col-span-8 group border border-stone-200 bg-white overflow-hidden flex flex-col md:flex-row h-full">
+          <div class="md:w-3/5 overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="A detailed view of an ancient Mustang cliff dwelling carved into orange sandstone, set against a brilliant blue sky. The architectural textures of the weathered stone and traditional wooden lintels are highlighted by sharp, high-contrast mountain sunlight. The scene is clean and minimalist, emphasizing the heritage and structural beauty of the Upper Mustang region in Nepal."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0-QiamiNBdCvHzTXi-WHg6SVViShoZUB3854DsDTPpQM9dEvPcP7APjo0-LBnKjE6ZyfXyr8AyEDgR-eVBYp4kDx1y22E7c-HNst1aX_gXeBmLS24YIPYqh9RCfDHPrcodfuiJYDdn-kBui-DM0XyM5agBd4TEabsT-qfzNDzevQPYRj48cvyCrRHETrRXAK1N-LO5gziFIFfvdVpzwPY_soQqxGww8gOdgEr2CSoKwNC0FIeSUXQtK1MRTlA_9cGNSLK3_K-" />
+          </div>
+          <div class="p-lg md:w-2/5 flex flex-col justify-between">
+            <div>
+              <span class="text-secondary font-label-sm text-label-sm uppercase tracking-tighter">High Altitude</span>
+              <h3 class="font-h3 text-h3 mt-2 mb-4">The Forbidden Kingdom of Upper Mustang</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">A stark landscape of wind-sculpted cliffs and
+                15th-century monasteries where Tibetan culture remains untouched.</p>
+            </div>
+            <a class="mt-8 flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all" href="#">Explore
+              Trail <span class="material-symbols-outlined">trending_flat</span></a>
+          </div>
+        </div>
+        <!-- Small Card 1 -->
+        <div class="md:col-span-4 border border-stone-200 bg-white group overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Lush, terraced tea gardens in Eastern Nepal, shrouded in soft mountain mist at sunrise. The deep forest green of the tea leaves contrasts beautifully with the pale morning light, creating a serene and editorial-quality image. The composition is clean and orderly, showcasing the sustainable agricultural heritage of the region in a modern light."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_d6YsnFyIkfIXlSfsLwEnjvWtkTWXBYHTB6XJewGpdssdsZ-yKUCFX1RXRWqnCzk6NIRvcQIQv5A7A24rHS9_DXVP9JkpSV6WTdE9T_iniVNehYWf17o-h5vmYft8l8nkwGSfNZFs5XXrxRQfU9_lN0tMQekEWExtgBunplOXfMkOE-_AALMMrO5moe3aA8S4_XaCwPCVgo7iyl1WPwy9vQgxBVA3UueALN2BU3ewXGgEubsFzr5eDvAGQ7H4Eg-tvJiLVIjY" />
+          </div>
+          <div class="p-lg">
+            <span class="text-secondary font-label-sm text-label-sm uppercase tracking-tighter">Lush Valleys</span>
+            <h3 class="font-h3 text-h3 mt-2 mb-2">Eastern Nepal Tea Trails</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Walk through mist-covered tea gardens and
+              rhododendron forests in the shadows of Kanchenjunga.</p>
+          </div>
+        </div>
+        <!-- Small Card 2 -->
+        <div class="md:col-span-4 border border-stone-200 bg-white group overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="An intricate wooden window frame from a traditional Newari house in Bhaktapur, showcasing exquisite woodcarving craftsmanship. The dark wood is aged and rich in detail, set against a clean white wall for a modern minimalist feel. The image represents the architectural heritage and artisan dedication central to Nepal Uncharted's mission."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSjQNkoNOzgQbZROqoup82360Gpi1ekyG_Jc3xY28k5y_NeXQevjvi5Nhc9j_a5hLe8H6Uy17Z7glZ0_8mwSq8IBvpPFaB67ruMH3q4nZdDEnELrXRMRXI5lQ7L0cygUIbiumg280dr6vwEftBiG4rxjh5F382Ib34g3jpt1dNVMDRPicCgtaSCf7exTA8eKrwgQLIBNZHtExcH04OUhqfZY5LTlYZvbeBVWH44PhVqF-HNCDvcSUXeTeY7DFKzTq-QGwvBr61" />
+          </div>
+          <div class="p-lg">
+            <span class="text-secondary font-label-sm text-label-sm uppercase tracking-tighter">Artisan Soul</span>
+            <h3 class="font-h3 text-h3 mt-2 mb-2">Kathmandu Valley Crafts</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Reconnect with living heritage through the
+              workshops of master woodcarvers and thangka painters.</p>
+          </div>
+        </div>
+        <!-- Small Card 3 -->
+        <div
+          class="md:col-span-8 border border-stone-200 bg-white overflow-hidden flex flex-col md:flex-row h-full group">
+          <div class="p-lg md:w-2/5 flex flex-col justify-center">
+            <span class="text-secondary font-label-sm text-label-sm uppercase tracking-tighter">Wild Frontier</span>
+            <h3 class="font-h3 text-h3 mt-2 mb-4">Western Nepal Lakes</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">The crystalline blue waters of Phoksundo Lake
+              offer a solitude rarely found in modern travel.</p>
+            <a class="mt-8 flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all" href="#">Discover
+              Remote Trails <span class="material-symbols-outlined">trending_flat</span></a>
+          </div>
+          <div class="md:w-3/5 overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="The deep turquoise, glass-like surface of Phoksundo Lake in Nepal, surrounded by rugged, ochre-colored mountains and a few sparse evergreen trees. The scene is shot with a flat, architectural perspective that emphasizes the clean lines of the horizon and the pure, saturated colors of the natural environment. The mood is tranquil and pristine."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtpEBffMNLzis1wnoIxRm2117t2470Uinps4M7kbZFMDgc3wjLQk7ayFq0_G0xl3moXWyArhGx2kgcebuMlas1qPJNRlcnqD18Z50Tlc2WqG0wZnwixENxfYfCiqHzSa9Uz5JDl-4rnSONN7kzJ8OOpXHUPCHYvlhqzM74HGb3uAG2tgrQvPQyCx8PrPVPgyq3OZLBIfXkZ1PO4ATYHfZFRAnjHtXoDhWZfUfiauN3xrY9Edcy6lQUSOSfXH-L4shGiCoTWoHV" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Why Responsible Travel Matters (Asymmetric Layout) -->
+    <section class="bg-surface-container-low py-24">
+      <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+        <div class="relative">
+          <div class="absolute -top-8 -left-8 w-32 h-32 border-l-2 border-t-2 border-secondary opacity-20"></div>
+          <img class="z-10 relative border-8 border-white shadow-sm"
+            data-alt="A portrait of a smiling Nepalese woman from a local mountain community, wearing traditional vibrant clothing in terracotta and deep green hues. She is standing in a brightly lit, clean village setting with high-quality, professional depth of field. The image conveys warmth, authenticity, and the direct human impact of sustainable tourism on local families."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPzHxTagavkLmZhmPUhxO3i2eDosrREOMe-dcyoPHxcjxxY_RlfqpkUut2dckZ9K3VspJHgLnhuhNgZbJmM0E-y3U8jgiYmsjYLH9642TqoQvOMAM7pfaA43-8OOwZ1snw00H-muaEjfDjPY-KsOP5pzblAhTJLCpUYlwiEckHZ8pf7UiT3cRK68K1ShZ-D6hCBWcF67r7mGQKgWVT_doI-UhRxsV8ugccG3ofjoje1_OZDxT60jSzipoNBfkw1gY4k-8_BEXw" />
+          <div class="absolute -bottom-10 -right-10 bg-secondary p-8 text-white max-w-xs hidden lg:block">
+            <span class="font-h2 text-h2 block mb-2">92%</span>
+            <p class="font-label-sm text-label-sm uppercase tracking-widest">Revenue remains in the local community
+              village funds.</p>
+          </div>
+        </div>
+        <div>
+          <h2 class="font-h2 text-h2 text-on-surface mb-lg">Why Responsible Travel Matters</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-xl leading-relaxed">In the "uncharted" regions,
+            tourism is more than a business; it is a lifeline. By choosing Nepal Uncharted, you aren't just visiting a
+            destination; you are participating in a Sustainability Protocol that restores heritage sites and funds local
+            education.</p>
+          <ul class="space-y-6">
+            <li class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-secondary mt-1">verified_user</span>
+              <div>
+                <h4 class="font-bold text-on-surface">Verified Community Partners</h4>
+                <p class="text-on-surface-variant font-body-md text-body-md">Every lodge and guide passes our rigorous
+                  social and environmental audit.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-secondary mt-1">energy_savings_leaf</span>
+              <div>
+                <h4 class="font-bold text-on-surface">Zero-Waste Expeditions</h4>
+                <p class="text-on-surface-variant font-body-md text-body-md">We implement strict waste-management and
+                  plastic-free protocols on every trail.</p>
+              </div>
+            </li>
+          </ul>
+          <div class="mt-12">
+            <span
+              class="inline-flex items-center gap-2 px-4 py-2 border-2 border-secondary text-secondary font-serif text-sm uppercase tracking-widest hover:bg-secondary hover:text-white transition-all cursor-pointer">
+              Our Impact Report 2024
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- How it Works (3-Step Guide) -->
+    <section class="py-24 px-8 max-w-7xl mx-auto text-center">
+      <h2 class="font-h2 text-h2 text-on-surface mb-4">Your Journey Decoded</h2>
+      <p class="max-w-2xl mx-auto font-body-lg text-body-lg text-on-surface-variant mb-16">Seamlessly bridging the gap
+        between your aspiration and the actual experience.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+        <!-- Connector Line -->
+        <div class="hidden md:block absolute top-12 left-1/4 right-1/4 h-[1px] bg-stone-200 z-0"></div>
+        <!-- Step 1 -->
+        <div class="relative z-10 flex flex-col items-center">
+          <div class="w-24 h-24 bg-white border border-stone-200 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-primary text-4xl">travel_explore</span>
+          </div>
+          <h3 class="font-h3 text-h3 mb-2">1. Discover</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant px-4">Browse our curated collection of
+            heritage-focused trails and hidden destinations.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="relative z-10 flex flex-col items-center">
+          <div class="w-24 h-24 bg-white border border-stone-200 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-primary text-4xl">psychology</span>
+          </div>
+          <h3 class="font-h3 text-h3 mb-2">2. Plan (AI)</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant px-4">Our Trail Builder AI optimizes your route
+            based on weather, fitness, and cultural interests.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="relative z-10 flex flex-col items-center">
+          <div class="w-24 h-24 bg-white border border-stone-200 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-primary text-4xl">mountain_flag</span>
+          </div>
+          <h3 class="font-h3 text-h3 mb-2">3. Experience</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant px-4">Step onto the trail with local experts and
+            all logistics handled with professional precision.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Voices from the Community (Testimonials) -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-8">
+        <h2 class="font-h2 text-h2 text-center mb-16">Voices from the Community</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Testimonial 1 -->
+          <div class="flex flex-col md:flex-row gap-8 p-8 border border-stone-100 bg-stone-50">
+            <div class="w-24 h-24 shrink-0 overflow-hidden">
+              <img class="w-full h-full object-cover"
+                data-alt="A close-up, high-detail portrait of an elderly mountain guide in Nepal. His face is etched with stories, wearing a traditional Dhaka topi hat. The lighting is warm and natural, casting soft shadows that highlight his kind expression. The background is a clean, out-of-focus village scene, maintaining a high-end editorial aesthetic."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-gbVAX_NOU1Gmo_ANwKkixwxGXAq1yWI3iFb5QcKQxK6z8aB2xMtAIBfujjPBshQyKj0_JbLAFFW3uNDBWrccaf7gDushVFQuyxBo5Ev5He_xZ1delYYRTZAfQGAKP0j0ILOtQBSYuW59pGoRcK1tLklEO4y5HKgEUGsSnbTSSYCpVufjgjk5r2ZVyzhfb88pwug1TsICIj4kabzOTmRdlWfL6NjiIryGVsxX3Z-68R75dUrenU5rrYi73bZaHT22DEbDR5xm" />
+            </div>
+            <div>
+              <span class="material-symbols-outlined text-tertiary mb-4">format_quote</span>
+              <p class="font-body-lg text-body-lg italic text-on-surface mb-6">"Through Nepal Uncharted, we’ve been able
+                to bring trekkers to our village who truly care about our history. The income has allowed us to restore
+                the community shrine."</p>
+              <h4 class="font-bold">Pasang Sherpa</h4>
+              <p class="text-on-surface-variant font-label-sm text-label-sm uppercase">Lead Cultural Guide, Solukhumbu
+              </p>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="flex flex-col md:flex-row gap-8 p-8 border border-stone-100 bg-stone-50">
+            <div class="w-24 h-24 shrink-0 overflow-hidden">
+              <img class="w-full h-full object-cover"
+                data-alt="A portrait of a young woman artisan in Kathmandu, working on a delicate pottery piece. The lighting is bright and airy, reflecting a modern studio space with heritage elements. Her focus is intense and professional, representing the skill and artisan community supported by Nepal Uncharted's marketplace. The color palette is composed of soft whites and earthy terracotta tones."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkvkg-nwIAguleSerorCRxXlgXzFvLpivC9ZeeaugxiZmo5vOgY4JpHmXJreiRZggFIfr8B1_84eScNJiUMGKagSQ3BK1sq0COV4r13mqZQA2WOrSoUTxJsHm91mZd_By8UfrCUquDThP3iHjtCQutdTWfTLpIXDlXM8yvgNKCE_WRClnLuf-Rdm-t6SrBj7qmkzu4SAvhHDadep3K_zrMb2lPY6qam9o95SoyQwtFLcgwLTDwnpHosTmIiedKaYC0MlGM2NYy" />
+            </div>
+            <div>
+              <span class="material-symbols-outlined text-tertiary mb-4">format_quote</span>
+              <p class="font-body-lg text-body-lg italic text-on-surface mb-6">"Our marketplace connection has given our
+                pottery cooperative a global voice. We are no longer just making souvenirs; we are sharing our ancestral
+                story."</p>
+              <h4 class="font-bold">Anjali Prajapati</h4>
+              <p class="text-on-surface-variant font-label-sm text-label-sm uppercase">Master Potter, Bhaktapur</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer Shell -->
+  <footer class="bg-stone-50 dark:bg-stone-950 border-t border-stone-200 dark:border-stone-800 py-16 px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="md:col-span-1">
+        <div class="text-xl font-serif text-orange-800 dark:text-orange-600 mb-4">Nepal Uncharted</div>
+        <p class="font-serif text-sm leading-relaxed text-stone-600 dark:text-stone-400">© 2024 Nepal Uncharted.
+          Preserving Heritage Through Sustainable Exploration.</p>
+      </div>
+      <div>
+        <h4 class="font-serif text-sm font-bold uppercase tracking-widest mb-6 text-green-900 dark:text-green-500">
+          Navigation</h4>
+        <ul class="space-y-4">
+          <li><a
+              class="font-serif text-sm text-stone-600 dark:text-stone-400 hover:text-green-800 dark:hover:text-green-400 underline transition-all"
+              href="#">Heritage Trails</a></li>
+          <li><a
+              class="font-serif text-sm text-stone-600 dark:text-stone-400 hover:text-green-800 dark:hover:text-green-400 underline transition-all"
+              href="#">Sustainability Protocol</a></li>
+          <li><a
+              class="font-serif text-sm text-stone-600 dark:text-stone-400 hover:text-green-800 dark:hover:text-green-400 underline transition-all"
+              href="#">Community Partners</a></li>
+          <li><a
+              class="font-serif text-sm text-stone-600 dark:text-stone-400 hover:text-green-800 dark:hover:text-green-400 underline transition-all"
+              href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-serif text-sm font-bold uppercase tracking-widest mb-6 text-green-900 dark:text-green-500">
+          Connect</h4>
+        <div class="flex gap-4">
+          <span class="material-symbols-outlined text-stone-500 cursor-pointer hover:text-primary">language</span>
+          <span class="material-symbols-outlined text-stone-500 cursor-pointer hover:text-primary">mail</span>
+          <span class="material-symbols-outlined text-stone-500 cursor-pointer hover:text-primary">near_me</span>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-serif text-sm font-bold uppercase tracking-widest mb-6 text-green-900 dark:text-green-500">
+          Newsletter</h4>
+        <div class="flex border-b border-stone-300 dark:border-stone-700 py-2">
+          <input class="bg-transparent border-none focus:ring-0 w-full text-sm font-serif" placeholder="Your email"
+            type="email" />
+          <button class="material-symbols-outlined text-primary">arrow_forward</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- BottomNavBar (Mobile Only) -->
+  <nav
+    class="fixed bottom-0 w-full flex justify-around items-center h-16 bg-white dark:bg-stone-950 md:hidden border-t border-stone-200 dark:border-stone-800 z-50">
+    <div class="flex flex-col items-center justify-center text-orange-700 dark:text-orange-500 font-bold">
+      <span class="material-symbols-outlined">explore</span>
+      <span class="font-serif text-[10px] font-medium">Explore</span>
+    </div>
+    <div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400">
+      <span class="material-symbols-outlined">map</span>
+      <span class="font-serif text-[10px] font-medium">Planner</span>
+    </div>
+    <div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400">
+      <span class="material-symbols-outlined">favorite</span>
+      <span class="font-serif text-[10px] font-medium">Impact</span>
+    </div>
+    <div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400">
+      <span class="material-symbols-outlined">confirmation_number</span>
+      <span class="font-serif text-[10px] font-medium">Bookings</span>
+    </div>
+  </nav>
+  <!-- FAB for mobile - only relevant on Home/Dashboard -->
+  <div class="fixed bottom-24 right-6 md:right-12 z-40">
+    <button
+      class="w-14 h-14 bg-primary-container text-on-primary-container shadow-xl flex items-center justify-center transition-all hover:scale-105 active:scale-95">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+    </button>
+  </div>
+</body>
+
+</html>
